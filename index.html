@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monetra Studio — Where Creators Become Earners</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Outfit:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --terracotta:#C4724A;--espresso:#3D2B1F;--sand:#D4B896;
+    --cream:#FAF6F1;--blush:#F5E6DC;--sand-light:#EFE3D4;
+    --fire:#D4410B;--clay:#B85C2C;--amber:#E8820C;
+    --muted:#9E8070;--ink:#2A1F1A;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--espresso);font-weight:300;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,246,241,0.92);backdrop-filter:blur(8px);}
+  .nav-logo{display:flex;align-items:center;gap:12px;}
+  .nav-logo svg{width:32px;height:32px;}
+  .wordmark{font-family:'Playfair Display',serif;font-size:18px;color:var(--espresso);letter-spacing:0.02em;}
+  .wordmark em{font-style:italic;}
+  .nav-cta{font-family:'Outfit',sans-serif;font-weight:500;font-size:14px;color:var(--cream);background:var(--espresso);padding:10px 22px;border-radius:2px;text-decoration:none;letter-spacing:0.04em;transition:background .2s;}
+  .nav-cta:hover{background:var(--fire);}
+
+  /* HERO */
+  .hero{min-height:100vh;background:var(--espresso);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;}
+  .hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(196,114,74,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+  .hero-isotipo{width:90px;height:90px;margin:0 auto 32px;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);color:var(--sand-light);line-height:1.12;max-width:760px;margin:0 auto 16px;}
+  .hero h1 em{font-style:italic;color:var(--terracotta);}
+  .hero-sub{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(16px,2vw,20px);color:var(--sand);max-width:520px;margin:0 auto 40px;line-height:1.6;}
+  .hero-cta{display:inline-block;font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream);background:var(--terracotta);padding:16px 36px;border-radius:2px;text-decoration:none;transition:background .2s;}
+  .hero-cta:hover{background:var(--fire);}
+  .hero-label{margin-top:20px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* HOW IT WORKS */
+  .how{padding:100px 24px;background:var(--cream);}
+  .section-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;}
+  .how h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);color:var(--espresso);max-width:560px;line-height:1.2;margin-bottom:64px;}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;max-width:960px;margin:0 auto;}
+  .step{position:relative;padding-left:24px;border-left:2px solid var(--blush);}
+  .step.active{border-left-color:var(--terracotta);}
+  .step-num{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:12px;}
+  .step h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--espresso);margin-bottom:10px;}
+  .step p{font-size:15px;color:var(--muted);line-height:1.65;}
+
+  /* PULL QUOTE */
+  .quote-section{background:var(--espresso);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+  .quote-bar{height:3px;width:64px;background:var(--fire);margin:0 auto 40px;}
+  .quote-section blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(24px,3.5vw,40px);color:var(--sand-light);max-width:700px;margin:0 auto;line-height:1.3;}
+  .quote-section cite{display:block;margin-top:24px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;font-style:normal;}
+
+  /* CONTACT */
+  .contact{padding:100px 24px;background:var(--blush);}
+  .contact-inner{max-width:560px;margin:0 auto;}
+  .contact h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);color:var(--espresso);margin-bottom:12px;}
+  .contact-sub{font-size:16px;color:var(--muted);margin-bottom:40px;line-height:1.6;}
+  .field{margin-bottom:20px;}
+  .field label{display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--espresso);margin-bottom:8px;}
+  .field input,.field textarea,.field select{width:100%;background:var(--cream);border:1px solid var(--sand);border-radius:2px;padding:14px 16px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--espresso);outline:none;transition:border-color .2s;}
+  .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--terracotta);}
+  .field textarea{height:120px;resize:vertical;}
+  .field select{appearance:none;cursor:pointer;}
+  .submit-btn{width:100%;background:var(--espresso);color:var(--cream);border:none;padding:16px;font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background .2s;margin-top:8px;}
+  .submit-btn:hover{background:var(--fire);}
+  .form-note{font-size:13px;color:var(--muted);margin-top:14px;text-align:center;}
+
+  /* FOOTER */
+  footer{background:var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;}
+  .footer-logo svg{width:24px;height:24px;}
+  .footer-wordmark{font-family:'Playfair Display',serif;font-size:15px;color:var(--sand-light);}
+  .footer-wordmark em{font-style:italic;}
+  .footer-right{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;}
+
+  /* ABOUT */
+  .about{padding:100px 24px;background:var(--cream);}
+  .about h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);color:var(--espresso);margin-bottom:48px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr;}}
+  .about-text p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:18px;}
+  .about-text p:last-child{color:var(--espresso);font-weight:400;}
+  .about-cards{display:flex;flex-direction:column;gap:20px;}
+  .founder-card{display:flex;align-items:flex-start;gap:16px;background:var(--blush);border-radius:2px;padding:24px;}
+  .founder-initial{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--espresso);color:var(--sand-light);font-family:'Playfair Display',serif;font-size:20px;display:flex;align-items:center;justify-content:center;}
+  .founder-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--espresso);margin-bottom:2px;}
+  .founder-role{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;}
+  .founder-bio{font-size:13px;color:var(--muted);line-height:1.6;}
+
+  /* UTILS */
+  .container{max-width:960px;margin:0 auto;}
+  .success-msg{display:none;background:var(--cream);border:1px solid var(--terracotta);border-radius:2px;padding:20px;text-align:center;font-size:15px;color:var(--espresso);margin-top:16px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z" fill="#C4724A" opacity=".9"/>
+      <path d="M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z" fill="#E8820C" opacity=".85"/>
+      <path d="M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z" fill="#B85C2C" opacity=".9"/>
+      <path d="M100 100 C128 112,136 140,118 154 C104 166,88 154,100 100Z" fill="#C4724A" opacity=".75"/>
+      <path d="M100 100 C72 112,64 140,82 154 C96 166,112 154,100 100Z" fill="#B85C2C" opacity=".8"/>
+      <path d="M100 100 C82 72,52 68,42 88 C34 104,48 118,100 100Z" fill="#E8820C" opacity=".7"/>
+      <circle cx="100" cy="100" r="14" fill="#2A1F1A"/>
+      <circle cx="100" cy="100" r="7" fill="#C4724A"/>
+    </svg>
+    <span class="wordmark">Monetra <em>Studio</em></span>
+  </div>
+  <a href="#contact" class="nav-cta">Work With Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div>
+    <div class="hero-isotipo">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z" fill="#C4724A" opacity=".9"/>
+        <path d="M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z" fill="#E8820C" opacity=".85"/>
+        <path d="M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z" fill="#B85C2C" opacity=".9"/>
+        <path d="M100 100 C128 112,136 140,118 154 C104 166,88 154,100 100Z" fill="#C4724A" opacity=".75"/>
+        <path d="M100 100 C72 112,64 140,82 154 C96 166,112 154,100 100Z" fill="#B85C2C" opacity=".8"/>
+        <path d="M100 100 C82 72,52 68,42 88 C34 104,48 118,100 100Z" fill="#E8820C" opacity=".7"/>
+        <circle cx="100" cy="100" r="14" fill="#2A1F1A"/>
+        <circle cx="100" cy="100" r="7" fill="#C4724A"/>
+      </svg>
+    </div>
+    <h1>Where creators<br/>become <em>earners.</em></h1>
+    <p class="hero-sub">We build done-for-you digital products for influencers. You bring the audience — we build the product. Your brand, your revenue.</p>
+    <a href="#contact" class="hero-cta">Let's Build Together</a>
+    <p class="hero-label">monetrastudio.com</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-label">How it works</p>
+    <h2>A product under your name. Without the work of building it.</h2>
+    <div class="steps">
+      <div class="step active">
+        <p class="step-num">01</p>
+        <h3>You bring the audience</h3>
+        <p>Your followers already trust you. That trust is the most valuable asset in the room — and you've already built it.</p>
+      </div>
+      <div class="step active">
+        <p class="step-num">02</p>
+        <h3>We build the product</h3>
+        <p>We create a ready-to-sell digital product — guides, toolkits, programs — branded to you, built to your niche.</p>
+      </div>
+      <div class="step active">
+        <p class="step-num">03</p>
+        <h3>You sell, you earn</h3>
+        <p>Launch under your brand. Keep the revenue. The product works while you keep doing what you do best — creating.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="quote-section">
+  <div class="quote-bar"></div>
+  <blockquote>"Your audience is already sold on you. You just haven't given them anything to buy."</blockquote>
+  <cite>Monetra Studio</cite>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <p class="section-label">Who we are</p>
+    <h2>Two cousins. One mission.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>We're Diana and Silvana — cousins who turned a shared obsession into a business. Monetra comes from <em>monetize.</em> Studio comes from the belief that building something good is a craft, not a shortcut.</p>
+        <p>We started this because we kept seeing the same thing: creators with loyal, engaged audiences and nothing to sell them. Not because they weren't talented — but because building a product takes a completely different set of skills than building an audience.</p>
+        <p>So we made a deal with ourselves. We'd grow by helping others grow. Every product we build for a creator is a product we pour real work into. Their win is our win. That's not a tagline — it's how we keep score.</p>
+        <p>We're early. We're ambitious. And we're betting that the best way to build something lasting is to make sure the people we work with do too.</p>
+      </div>
+      <div class="about-cards">
+        <div class="founder-card">
+          <div class="founder-initial">D</div>
+          <div>
+            <p class="founder-name">Diana</p>
+            <p class="founder-role">Co-founder · Marketing</p>
+            <p class="founder-bio">Marketing, strategy, and a sharp eye for what makes people pay attention.</p>
+          </div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-initial">S</div>
+          <div>
+            <p class="founder-name">Silvana</p>
+            <p class="founder-role">Co-founder · Business & Accounts</p>
+            <p class="founder-bio">Sales, accounts, and seven years of learning how trust turns into revenue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="section-label">Work with us</p>
+    <h2>Your content, monetized.</h2>
+    <p class="contact-sub">Tell us a little about you. We'll reach out within 48 hours to explore what we can build together.</p>
+    <div id="contact-form">
+      <div class="field">
+        <label>Your name</label>
+        <input type="text" id="f-name" placeholder="Jane Smith"/>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="f-email" placeholder="jane@email.com"/>
+      </div>
+      <div class="field">
+        <label>Instagram handle</label>
+        <input type="text" id="f-handle" placeholder="@yourhandle"/>
+      </div>
+      <div class="field">
+        <label>Your niche</label>
+        <select id="f-niche">
+          <option value="" disabled selected>Select your niche</option>
+          <option>Fitness & Nutrition</option>
+          <option>Wellness & Lifestyle</option>
+          <option>Parenting & Family</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Anything else? (optional)</label>
+        <textarea id="f-msg" placeholder="Tell us about your audience, your goals, or anything you'd like us to know."></textarea>
+      </div>
+      <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">Send My Info →</button>
+      <p class="form-note">No commitment. Just a conversation.</p>
+    </div>
+    <div class="success-msg" id="success-msg">
+      🤎 Thanks! We'll be in touch within 48 hours.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z" fill="#C4724A" opacity=".9"/>
+      <path d="M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z" fill="#E8820C" opacity=".85"/>
+      <path d="M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z" fill="#B85C2C" opacity=".9"/>
+      <path d="M100 100 C128 112,136 140,118 154 C104 166,88 154,100 100Z" fill="#C4724A" opacity=".75"/>
+      <path d="M100 100 C72 112,64 140,82 154 C96 166,112 154,100 100Z" fill="#B85C2C" opacity=".8"/>
+      <path d="M100 100 C82 72,52 68,42 88 C34 104,48 118,100 100Z" fill="#E8820C" opacity=".7"/>
+      <circle cx="100" cy="100" r="14" fill="#2A1F1A"/>
+      <circle cx="100" cy="100" r="7" fill="#C4724A"/>
+    </svg>
+    <span class="footer-wordmark">Monetra <em>Studio</em></span>
+  </div>
+  <div class="footer-right">© 2025 Monetra Studio · Where creators become earners.</div>
+</footer>
+
+<script>
+async function handleSubmit(){
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const handle=document.getElementById('f-handle').value.trim();
+  const niche=document.getElementById('f-niche').value;
+  const msg=document.getElementById('f-msg').value.trim();
+  if(!name||!email){alert('Please enter your name and email.');return;}
+  const btn=document.getElementById('submit-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const res=await fetch('https://formspree.io/f/xqeyjllq',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name,email,instagram:handle,niche,message:msg})
+    });
+    if(res.ok){
+      document.getElementById('contact-form').style.display='none';
+      document.getElementById('success-msg').style.display='block';
+    } else {
+      btn.textContent='Send My Info →';btn.disabled=false;
+      alert('Something went wrong. Please try again.');
+    }
+  } catch(e){
+    btn.textContent='Send My Info →';btn.disabled=false;
+    alert('Something went wrong. Please try again.');
+  }
+}
+</script>
+</body>
+</html>
