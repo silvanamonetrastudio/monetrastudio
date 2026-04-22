@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z' fill='%23C4724A' opacity='.9'/><path d='M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z' fill='%23E8820C' opacity='.85'/><path d='M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z' fill='%23B85C2C' opacity='.9'/><path d='M100 100 C128 112,136 140,118 154 C104 166,88 154,100 100Z' fill='%23C4724A' opacity='.75'/><path d='M100 100 C72 112,64 140,82 154 C96 166,112 154,100 100Z' fill='%23B85C2C' opacity='.8'/><path d='M100 100 C82 72,52 68,42 88 C34 104,48 118,100 100Z' fill='%23E8820C' opacity='.7'/><circle cx='100' cy='100' r='14' fill='%232A1F1A'/><circle cx='100' cy='100' r='7' fill='%23C4724A'/></svg>">
+<head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Monetra Studio — Where Creators Become Earners</title>
+<title>Monetra Studio — Where Local Business Grows</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z' fill='%23C4724A' opacity='.9'/%3E%3Cpath d='M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z' fill='%23E8820C' opacity='.85'/%3E%3Cpath d='M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z' fill='%23B85C2C' opacity='.9'/%3E%3Cpath d='M100 100 C128 112,136 140,118 154 C104 166,88 154,100 100Z' fill='%23C4724A' opacity='.75'/%3E%3Cpath d='M100 100 C72 112,64 140,82 154 C96 166,112 154,100 100Z' fill='%23B85C2C' opacity='.8'/%3E%3Cpath d='M100 100 C82 72,52 68,42 88 C34 104,48 118,100 100Z' fill='%23E8820C' opacity='.7'/%3E%3Ccircle cx='100' cy='100' r='14' fill='%232A1F1A'/%3E%3Ccircle cx='100' cy='100' r='7' fill='%23C4724A'/%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Outfit:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet"/>
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -11,88 +12,160 @@
     --terracotta:#C4724A;--espresso:#3D2B1F;--sand:#D4B896;
     --cream:#FAF6F1;--blush:#F5E6DC;--sand-light:#EFE3D4;
     --fire:#D4410B;--clay:#B85C2C;--amber:#E8820C;
-    --muted:#9E8070;--ink:#2A1F1A;
+    --muted:#9E8070;--ink:#2A1F1A;--off:#F0E6DA;
   }
   html{scroll-behavior:smooth;}
   body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--espresso);font-weight:300;}
 
-  /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,246,241,0.92);backdrop-filter:blur(8px);}
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,246,241,0.94);backdrop-filter:blur(8px);}
   .nav-logo{display:flex;align-items:center;gap:12px;}
   .nav-logo svg{width:32px;height:32px;}
   .wordmark{font-family:'Playfair Display',serif;font-size:18px;color:var(--espresso);letter-spacing:0.02em;}
   .wordmark em{font-style:italic;}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-link{font-family:'Outfit',sans-serif;font-size:14px;color:var(--muted);text-decoration:none;letter-spacing:0.03em;transition:color .2s;}
+  .nav-link:hover{color:var(--espresso);}
   .nav-cta{font-family:'Outfit',sans-serif;font-weight:500;font-size:14px;color:var(--cream);background:var(--espresso);padding:10px 22px;border-radius:2px;text-decoration:none;letter-spacing:0.04em;transition:background .2s;}
   .nav-cta:hover{background:var(--fire);}
 
-  /* HERO */
+  /* ── HERO ── */
   .hero{min-height:100vh;background:var(--espresso);display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;}
-  .hero-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(196,114,74,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
-  .hero-isotipo{width:90px;height:90px;margin:0 auto 32px;}
-  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);color:var(--sand-light);line-height:1.12;max-width:760px;margin:0 auto 16px;}
+  .hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(196,114,74,0.16) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+  .hero-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90vw;height:90vw;max-width:800px;max-height:800px;pointer-events:none;}
+  .ring{position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);border:0.5px solid rgba(196,114,74,0.12);}
+  .ring1{width:55%;height:55%;}
+  .ring2{width:75%;height:75%;}
+  .ring3{width:95%;height:95%;}
+  .hero-isotipo{width:80px;height:80px;margin:0 auto 32px;position:relative;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5.5vw,70px);color:var(--sand-light);line-height:1.1;max-width:760px;margin:0 auto 20px;}
   .hero h1 em{font-style:italic;color:var(--terracotta);}
-  .hero-sub{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(16px,2vw,20px);color:var(--sand);max-width:520px;margin:0 auto 40px;line-height:1.6;}
-  .hero-cta{display:inline-block;font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream);background:var(--terracotta);padding:16px 36px;border-radius:2px;text-decoration:none;transition:background .2s;}
+  .hero-sub{font-family:'Outfit',sans-serif;font-weight:300;font-size:clamp(15px,1.8vw,19px);color:var(--sand);max-width:520px;margin:0 auto 40px;line-height:1.65;}
+  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .hero-cta{display:inline-block;font-family:'Outfit',sans-serif;font-weight:500;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--cream);background:var(--terracotta);padding:16px 36px;border-radius:2px;text-decoration:none;transition:background .2s;}
   .hero-cta:hover{background:var(--fire);}
-  .hero-label{margin-top:20px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+  .hero-cta-ghost{display:inline-block;font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:var(--sand);border:1px solid rgba(212,184,150,0.3);padding:15px 28px;border-radius:2px;text-decoration:none;transition:border-color .2s,color .2s;}
+  .hero-cta-ghost:hover{border-color:var(--sand);color:var(--sand-light);}
+  .hero-label{margin-top:28px;font-family:'Space Mono',monospace;font-size:10px;color:rgba(158,128,112,0.5);letter-spacing:0.12em;text-transform:uppercase;}
 
-  /* HOW IT WORKS */
-  .how{padding:100px 24px;background:var(--cream);}
-  .section-label{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;}
-  .how h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);color:var(--espresso);max-width:560px;line-height:1.2;margin-bottom:64px;}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px;max-width:960px;margin:0 auto;}
-  .step{position:relative;padding-left:24px;border-left:2px solid var(--blush);}
-  .step.active{border-left-color:var(--terracotta);}
-  .step-num{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;margin-bottom:12px;}
-  .step h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--espresso);margin-bottom:10px;}
-  .step p{font-size:15px;color:var(--muted);line-height:1.65;}
+  /* ── SECTION SHARED ── */
+  .section-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--terracotta);margin-bottom:16px;}
+  .container{max-width:960px;margin:0 auto;}
+  section{padding:100px 24px;}
 
-  /* PULL QUOTE */
-  .quote-section{background:var(--espresso);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
-  .quote-bar{height:3px;width:64px;background:var(--fire);margin:0 auto 40px;}
-  .quote-section blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(24px,3.5vw,40px);color:var(--sand-light);max-width:700px;margin:0 auto;line-height:1.3;}
-  .quote-section cite{display:block;margin-top:24px;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;font-style:normal;}
+  /* ── NOT AN AGENCY BAND ── */
+  .distinction{background:var(--ink);padding:36px 48px;display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;}
+  .dist-item{display:flex;align-items:center;gap:12px;}
+  .dist-icon{font-family:'Space Mono',monospace;font-size:11px;color:var(--terracotta);}
+  .dist-text{font-family:'Outfit',sans-serif;font-weight:300;font-size:14px;color:rgba(239,227,212,0.6);}
+  .dist-text strong{color:var(--sand-light);font-weight:500;}
 
-  /* CONTACT */
-  .contact{padding:100px 24px;background:var(--blush);}
+  /* ── SERVICES ── */
+  .services{background:var(--cream);}
+  .services-header{margin-bottom:64px;}
+  .services h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:var(--espresso);line-height:1.15;max-width:600px;}
+  .services h2 em{font-style:italic;color:var(--terracotta);}
+  .services-intro{font-size:15px;color:var(--muted);max-width:520px;line-height:1.75;margin-top:16px;}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-top:48px;}
+  .svc-card{background:var(--blush);padding:36px 32px;position:relative;overflow:hidden;transition:background .2s;}
+  .svc-card:nth-child(even){background:var(--off);}
+  .svc-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--terracotta);opacity:0;transition:opacity .2s;}
+  .svc-card:hover::before{opacity:1;}
+  .svc-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--terracotta);letter-spacing:0.1em;margin-bottom:20px;}
+  .svc-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--espresso);margin-bottom:12px;line-height:1.2;}
+  .svc-title em{font-style:italic;}
+  .svc-desc{font-family:'Outfit',sans-serif;font-weight:300;font-size:14px;color:var(--muted);line-height:1.7;}
+
+  /* ── HOW IT WORKS ── */
+  .how{background:var(--espresso);padding:100px 24px;}
+  .how h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:var(--sand-light);max-width:560px;line-height:1.15;margin-bottom:64px;}
+  .how h2 em{font-style:italic;color:var(--terracotta);}
+  .how .section-label{color:var(--terracotta);}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:0.5px solid rgba(196,114,74,0.15);}
+  .step{padding:40px 36px;border-right:0.5px solid rgba(196,114,74,0.15);}
+  .step:last-child{border-right:none;}
+  .step-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--terracotta);letter-spacing:0.1em;margin-bottom:20px;}
+  .step h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--sand-light);margin-bottom:12px;line-height:1.2;}
+  .step h3 em{font-style:italic;}
+  .step p{font-size:14px;color:rgba(212,184,150,0.55);line-height:1.7;}
+
+  /* ── PULL QUOTE ── */
+  .quote-section{background:var(--blush);padding:80px 24px;text-align:center;position:relative;}
+  .quote-bar{height:2px;width:48px;background:var(--terracotta);margin:0 auto 40px;}
+  .quote-section blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3vw,36px);color:var(--espresso);max-width:680px;margin:0 auto;line-height:1.35;}
+  .quote-section cite{display:block;margin-top:24px;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;font-style:normal;}
+
+  /* ── APPROACH ── */
+  .approach{background:var(--cream);}
+  .approach h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:var(--espresso);max-width:520px;line-height:1.15;margin-bottom:16px;}
+  .approach h2 em{font-style:italic;color:var(--terracotta);}
+  .approach-sub{font-size:15px;color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:56px;}
+  .approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;}
+  .ap-card{padding:40px 36px;background:var(--off);border:1px solid rgba(61,43,31,0.06);}
+  .ap-card:first-child{background:var(--espresso);border:none;}
+  .ap-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px;}
+  .ap-card:first-child .ap-label{color:var(--terracotta);}
+  .ap-card:not(:first-child) .ap-label{color:var(--muted);}
+  .ap-body{font-family:'Outfit',sans-serif;font-weight:300;font-size:15px;line-height:1.75;}
+  .ap-card:first-child .ap-body{color:rgba(239,227,212,0.7);}
+  .ap-card:not(:first-child) .ap-body{color:var(--muted);}
+  .ap-body strong{font-weight:500;}
+  .ap-card:first-child .ap-body strong{color:var(--sand-light);}
+  .ap-card:not(:first-child) .ap-body strong{color:var(--espresso);}
+
+  /* ── ABOUT ── */
+  .about{background:var(--off);}
+  .about h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);color:var(--espresso);margin-bottom:48px;line-height:1.15;}
+  .about h2 em{font-style:italic;color:var(--terracotta);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+  @media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+  .about-text p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:18px;}
+  .about-text p strong{color:var(--espresso);font-weight:500;}
+  .about-text p:last-child{color:var(--espresso);font-weight:400;}
+  .about-visual{background:var(--espresso);padding:48px 40px;display:flex;flex-direction:column;gap:24px;}
+  .about-pill{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta);margin-bottom:4px;}
+  .about-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2vw,22px);color:var(--sand-light);line-height:1.45;}
+  .about-rule{height:1px;background:rgba(196,114,74,0.2);}
+  .about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .about-stat{display:flex;flex-direction:column;gap:4px;}
+  .about-stat-n{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:var(--terracotta);}
+  .about-stat-t{font-family:'Outfit',sans-serif;font-weight:300;font-size:12px;color:rgba(212,184,150,0.55);line-height:1.5;}
+
+  /* ── CONTACT ── */
+  .contact{background:var(--espresso);}
   .contact-inner{max-width:560px;margin:0 auto;}
-  .contact h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);color:var(--espresso);margin-bottom:12px;}
-  .contact-sub{font-size:16px;color:var(--muted);margin-bottom:40px;line-height:1.6;}
+  .contact .section-label{color:var(--terracotta);}
+  .contact h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);color:var(--sand-light);margin-bottom:12px;line-height:1.15;}
+  .contact h2 em{font-style:italic;color:var(--terracotta);}
+  .contact-sub{font-size:15px;color:rgba(212,184,150,0.6);margin-bottom:40px;line-height:1.65;}
   .field{margin-bottom:20px;}
-  .field label{display:block;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--espresso);margin-bottom:8px;}
-  .field input,.field textarea,.field select{width:100%;background:var(--cream);border:1px solid var(--sand);border-radius:2px;padding:14px 16px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--espresso);outline:none;transition:border-color .2s;}
-  .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--terracotta);}
+  .field label{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sand);margin-bottom:8px;}
+  .field input,.field textarea{width:100%;background:rgba(250,246,241,0.05);border:1px solid rgba(212,184,150,0.2);border-radius:2px;padding:14px 16px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--sand-light);outline:none;transition:border-color .2s;}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(158,128,112,0.5);}
+  .field input:focus,.field textarea:focus{border-color:var(--terracotta);}
   .field textarea{height:120px;resize:vertical;}
-  .field select{appearance:none;cursor:pointer;}
-  .submit-btn{width:100%;background:var(--espresso);color:var(--cream);border:none;padding:16px;font-family:'Outfit',sans-serif;font-weight:500;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background .2s;margin-top:8px;}
+  .submit-btn{width:100%;background:var(--terracotta);color:var(--cream);border:none;padding:16px;font-family:'Outfit',sans-serif;font-weight:500;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background .2s;margin-top:8px;}
   .submit-btn:hover{background:var(--fire);}
-  .form-note{font-size:13px;color:var(--muted);margin-top:14px;text-align:center;}
+  .form-note{font-size:13px;color:rgba(158,128,112,0.5);margin-top:14px;text-align:center;}
+  .success-msg{display:none;background:rgba(196,114,74,0.12);border:1px solid rgba(196,114,74,0.3);border-radius:2px;padding:24px;text-align:center;font-size:15px;color:var(--sand-light);margin-top:16px;}
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer{background:var(--ink);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
   .footer-logo{display:flex;align-items:center;gap:10px;}
   .footer-logo svg{width:24px;height:24px;}
   .footer-wordmark{font-family:'Playfair Display',serif;font-size:15px;color:var(--sand-light);}
   .footer-wordmark em{font-style:italic;}
-  .footer-right{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.06em;}
+  .footer-right{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.06em;}
 
-  /* ABOUT */
-  .about{padding:100px 24px;background:var(--cream);}
-  .about h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);color:var(--espresso);margin-bottom:48px;}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-  @media(max-width:720px){.about-grid{grid-template-columns:1fr;}}
-  .about-text p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:18px;}
-  .about-text p:last-child{color:var(--espresso);font-weight:400;}
-  .about-cards{display:flex;flex-direction:column;gap:20px;}
-  .founder-card{display:flex;align-items:flex-start;gap:16px;background:var(--blush);border-radius:2px;padding:24px;}
-  .founder-initial{width:44px;height:44px;min-width:44px;border-radius:50%;background:var(--espresso);color:var(--sand-light);font-family:'Playfair Display',serif;font-size:20px;display:flex;align-items:center;justify-content:center;}
-  .founder-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--espresso);margin-bottom:2px;}
-  .founder-role{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px;}
-  .founder-bio{font-size:13px;color:var(--muted);line-height:1.6;}
-
-  /* UTILS */
-  .container{max-width:960px;margin:0 auto;}
-  .success-msg{display:none;background:var(--cream);border:1px solid var(--terracotta);border-radius:2px;padding:20px;text-align:center;font-size:15px;color:var(--espresso);margin-top:16px;}
+  /* ── RESPONSIVE ── */
+  @media(max-width:600px){
+    nav{padding:16px 20px;}
+    .nav-links{display:none;}
+    .distinction{gap:20px;padding:28px 24px;}
+    .step{border-right:none;border-bottom:0.5px solid rgba(196,114,74,0.15);}
+    .step:last-child{border-bottom:none;}
+    footer{padding:32px 20px;flex-direction:column;text-align:center;}
+  }
 </style>
 </head>
 <body>
@@ -112,15 +185,25 @@
     </svg>
     <span class="wordmark">Monetra <em>Studio</em></span>
   </div>
-  <a href="#contact" class="nav-cta">Work With Us</a>
+  <div class="nav-links">
+    <a href="#services" class="nav-link">What we do</a>
+    <a href="#how" class="nav-link">How it works</a>
+    <a href="#about" class="nav-link">About</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get Started</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <div>
+  <div class="hero-rings">
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+  </div>
+  <div style="position:relative;">
     <div class="hero-isotipo">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
         <path d="M100 100 C72 88,58 62,76 42 C90 26,110 36,100 100Z" fill="#C4724A" opacity=".9"/>
         <path d="M100 100 C128 88,142 62,124 42 C110 26,90 36,100 100Z" fill="#E8820C" opacity=".85"/>
         <path d="M100 100 C118 72,148 68,158 88 C166 104,152 118,100 100Z" fill="#B85C2C" opacity=".9"/>
@@ -131,10 +214,66 @@
         <circle cx="100" cy="100" r="7" fill="#C4724A"/>
       </svg>
     </div>
-    <h1>Where creators<br/>become <em>earners.</em></h1>
-    <p class="hero-sub">We build done-for-you digital products for influencers. You bring the audience — we build the product. Your brand, your revenue.</p>
-    <a href="#contact" class="hero-cta">Let's Build Together</a>
-    <p class="hero-label">monetrastudio.com</p>
+    <h1>The operations team<br/>your business never <em>had.</em></h1>
+    <p class="hero-sub">We automate what's manual, systemize what's chaotic, and handle what keeps getting pushed to tomorrow. You focus on your craft — we handle the rest.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="hero-cta">Start the Conversation</a>
+      <a href="#services" class="hero-cta-ghost">See What We Do</a>
+    </div>
+    <p class="hero-label">Where local business grows.</p>
+  </div>
+</section>
+
+<!-- NOT-AN-AGENCY BAND -->
+<div class="distinction">
+  <div class="dist-item">
+    <span class="dist-icon">×</span>
+    <span class="dist-text">Not a <strong>social media agency</strong></span>
+  </div>
+  <div class="dist-item">
+    <span class="dist-icon">×</span>
+    <span class="dist-text">Not a <strong>freelancer</strong></span>
+  </div>
+  <div class="dist-item">
+    <span class="dist-icon">×</span>
+    <span class="dist-text">Not another <strong>generic pitch</strong></span>
+  </div>
+  <div class="dist-item">
+    <span class="dist-icon">→</span>
+    <span class="dist-text"><strong>Your operations partner.</strong> Scoped to your actual gaps.</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <p class="section-label">What we do</p>
+      <h2>Fix the engine<br/><em>first.</em></h2>
+      <p class="services-intro">We look at your business as a system. Where are the leaks? What's running on manual that shouldn't be? What's invisible that should be visible? We solve those things. Visibility and content are part of it — not the whole job.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <p class="svc-num">01</p>
+        <h3 class="svc-title">Automation &amp; <em>Systems</em></h3>
+        <p class="svc-desc">Appointment reminders, follow-up sequences, review requests, lead capture — we build the flows that run while you serve clients. Manual processes that eat hours get automated. Once.</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">02</p>
+        <h3 class="svc-title">Visibility &amp; <em>Content</em></h3>
+        <p class="svc-desc">Your customers are already looking for you online. We make sure they find you — and like what they see. Content created from your own photos, branded, and posted consistently. No photoshoots required.</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">03</p>
+        <h3 class="svc-title">KPI <em>Reporting</em></h3>
+        <p class="svc-desc">Every month, a clear report: what moved, what didn't, and what we're doing next. You always know exactly what your investment is doing — in plain language, not marketing speak.</p>
+      </div>
+      <div class="svc-card">
+        <p class="svc-num">04</p>
+        <h3 class="svc-title">Growth <em>Strategy</em></h3>
+        <p class="svc-desc">We don't just execute — we think about your business. Monthly check-in to flag what's not working, name it directly, and adapt. We're a partner, not a vendor you only hear from on invoice day.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -142,22 +281,22 @@
 <section class="how" id="how">
   <div class="container">
     <p class="section-label">How it works</p>
-    <h2>A product under your name. Without the work of building it.</h2>
+    <h2>From discovery to<br/><em>results.</em> No fluff.</h2>
     <div class="steps">
-      <div class="step active">
+      <div class="step">
         <p class="step-num">01</p>
-        <h3>You bring the audience</h3>
-        <p>Your followers already trust you. That trust is the most valuable asset in the room — and you've already built it.</p>
+        <h3>Free <em>discovery call</em></h3>
+        <p>We learn your business — the actual gaps, not just what you think needs fixing. No pitch. No pressure. We tell you honestly what we can and can't do for you.</p>
       </div>
-      <div class="step active">
+      <div class="step">
         <p class="step-num">02</p>
-        <h3>We build the product</h3>
-        <p>We create a ready-to-sell digital product — guides, toolkits, programs — branded to you, built to your niche.</p>
+        <h3>Scoped &amp; <em>executed</em></h3>
+        <p>Everything in writing before we start. We build what's scoped — automations go live, content goes out, systems get built. No open-ended work, no surprises.</p>
       </div>
-      <div class="step active">
+      <div class="step">
         <p class="step-num">03</p>
-        <h3>You sell, you earn</h3>
-        <p>Launch under your brand. Keep the revenue. The product works while you keep doing what you do best — creating.</p>
+        <h3>Monthly <em>check-in</em></h3>
+        <p>Real numbers. What moved, what didn't, what's next. We show up every month — not just when things are going well.</p>
       </div>
     </div>
   </div>
@@ -166,37 +305,65 @@
 <!-- PULL QUOTE -->
 <section class="quote-section">
   <div class="quote-bar"></div>
-  <blockquote>"Your audience is already sold on you. You just haven't given them anything to buy."</blockquote>
+  <blockquote>"They're not buying marketing. They're buying back hours and peace of mind."</blockquote>
   <cite>Monetra Studio</cite>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="container">
+    <p class="section-label">Our approach</p>
+    <h2>Scoped to your gaps.<br/><em>Not a fixed package.</em></h2>
+    <p class="approach-sub">Every business is different. A salon doesn't need the same thing as a contractor or a fitness studio. We figure out what's actually missing — then scope exactly that. Nothing more, nothing less.</p>
+    <div class="approach-grid">
+      <div class="ap-card">
+        <p class="ap-label">How we engage</p>
+        <p class="ap-body">It starts with a free discovery call. We learn what's broken, what's being ignored, and where the biggest bottlenecks are. Then we put a scope in writing — deliverables, timeline, and what success looks like. <strong>You approve it before anything starts.</strong></p>
+      </div>
+      <div class="ap-card">
+        <p class="ap-label">What you can expect</p>
+        <p class="ap-body">Real results take 90 days. We'll tell you that upfront because it's true. In that time: systems get built, visibility improves, and you stop doing things manually that a process can do for you. <strong>We measure it and show you the numbers.</strong></p>
+      </div>
+      <div class="ap-card">
+        <p class="ap-label">What makes us different</p>
+        <p class="ap-body">We sit between a freelancer and an agency — more human than one, more affordable than the other. We're selective. We take on clients we can actually move the needle for. <strong>Your growth is how we keep score.</strong></p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
     <p class="section-label">Who we are</p>
-    <h2>Two cousins. One mission.</h2>
+    <h2>Two cousins.<br/><em>One mission.</em></h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>We're Diana and Silvana — cousins who turned a shared obsession into a business. Monetra comes from <em>monetize.</em> Studio comes from the belief that building something good is a craft, not a shortcut.</p>
-        <p>We started this because we kept seeing the same thing: creators with loyal, engaged audiences and nothing to sell them. Not because they weren't talented — but because building a product takes a completely different set of skills than building an audience.</p>
-        <p>So we made a deal with ourselves. We'd grow by helping others grow. Every product we build for a creator is a product we pour real work into. Their win is our win. That's not a tagline — it's how we keep score.</p>
-        <p>We're early. We're ambitious. And we're betting that the best way to build something lasting is to make sure the people we work with do too.</p>
+        <p>We're Diana and Silvana — cousins who started Monetra because we kept seeing the same problem: business owners who were great at their craft but stretched too thin to run everything around it.</p>
+        <p>The systems, the visibility, the admin, the follow-up — it piles up. And most of the "solutions" out there are either too expensive, too generic, or just another agency promising Instagram growth and delivering vanity metrics.</p>
+        <p><strong>We do something different.</strong> We look at the actual business, find where it's leaking time and money, and fix those things. Content and social media are part of that when they're needed — not the whole pitch.</p>
+        <p>We're selective about who we work with because we want to be the team that gets real credit for real results.</p>
       </div>
-      <div class="about-cards">
-        <div class="founder-card">
-          <div class="founder-initial">D</div>
-          <div>
-            <p class="founder-name">Diana</p>
-            <p class="founder-role">Co-founder · Marketing</p>
-            <p class="founder-bio">Marketing, strategy, and a sharp eye for what makes people pay attention.</p>
+      <div class="about-visual">
+        <p class="about-pill">Why we built this</p>
+        <p class="about-quote">"You focus on your craft. We handle the rest — and we make it better."</p>
+        <div class="about-rule"></div>
+        <div class="about-stat-grid">
+          <div class="about-stat">
+            <span class="about-stat-n">Not</span>
+            <span class="about-stat-t">a social media agency. Social is one tool among many.</span>
           </div>
-        </div>
-        <div class="founder-card">
-          <div class="founder-initial">S</div>
-          <div>
-            <p class="founder-name">Silvana</p>
-            <p class="founder-role">Co-founder · Business & Accounts</p>
-            <p class="founder-bio">Sales, accounts, and seven years of learning how trust turns into revenue.</p>
+          <div class="about-stat">
+            <span class="about-stat-n">90-day</span>
+            <span class="about-stat-t">results horizon. Real numbers, not vanity metrics.</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-n">4</span>
+            <span class="about-stat-t">service modules. Scoped to what you actually need.</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-n">Free</span>
+            <span class="about-stat-t">discovery call. No pitch. Just an honest conversation.</span>
           </div>
         </div>
       </div>
@@ -208,8 +375,8 @@
 <section class="contact" id="contact">
   <div class="contact-inner">
     <p class="section-label">Work with us</p>
-    <h2>Your content, monetized.</h2>
-    <p class="contact-sub">Tell us a little about you. We'll reach out within 48 hours to explore what we can build together.</p>
+    <h2>Tell us what's<br/><em>not working.</em></h2>
+    <p class="contact-sub">We'll reach out within 48 hours to schedule a free discovery call. No commitment — just an honest conversation about your business.</p>
     <div id="contact-form">
       <div class="field">
         <label>Your name</label>
@@ -217,31 +384,21 @@
       </div>
       <div class="field">
         <label>Email</label>
-        <input type="email" id="f-email" placeholder="jane@email.com"/>
+        <input type="email" id="f-email" placeholder="jane@yourbusiness.com"/>
       </div>
       <div class="field">
-        <label>Instagram handle</label>
-        <input type="text" id="f-handle" placeholder="@yourhandle"/>
+        <label>Business name</label>
+        <input type="text" id="f-business" placeholder="Your business name"/>
       </div>
       <div class="field">
-        <label>Your niche</label>
-        <select id="f-niche">
-          <option value="" disabled selected>Select your niche</option>
-          <option>Fitness & Nutrition</option>
-          <option>Wellness & Lifestyle</option>
-          <option>Parenting & Family</option>
-          <option>Other</option>
-        </select>
+        <label>What's your biggest challenge right now?</label>
+        <textarea id="f-msg" placeholder="Not enough time, inconsistent online presence, manual processes eating hours, slow month…"></textarea>
       </div>
-      <div class="field">
-        <label>Anything else? (optional)</label>
-        <textarea id="f-msg" placeholder="Tell us about your audience, your goals, or anything you'd like us to know."></textarea>
-      </div>
-      <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">Send My Info →</button>
+      <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">Send →</button>
       <p class="form-note">No commitment. Just a conversation.</p>
     </div>
     <div class="success-msg" id="success-msg">
-      🤎 Thanks! We'll be in touch within 48 hours.
+      Thanks — we'll be in touch within 48 hours.
     </div>
   </div>
 </section>
@@ -261,37 +418,40 @@
     </svg>
     <span class="footer-wordmark">Monetra <em>Studio</em></span>
   </div>
-  <div class="footer-right">© 2025 Monetra Studio · Where creators become earners.</div>
+  <div class="footer-right">© 2026 Monetra Studio · Where local business grows.</div>
 </footer>
 
 <script>
 async function handleSubmit(){
-  const name=document.getElementById('f-name').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  const handle=document.getElementById('f-handle').value.trim();
-  const niche=document.getElementById('f-niche').value;
-  const msg=document.getElementById('f-msg').value.trim();
-  if(!name||!email){alert('Please enter your name and email.');return;}
-  const btn=document.getElementById('submit-btn');
-  btn.textContent='Sending...';btn.disabled=true;
+  const name     = document.getElementById('f-name').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const business = document.getElementById('f-business').value.trim();
+  const msg      = document.getElementById('f-msg').value.trim();
+
+  if(!name || !email){alert('Please enter your name and email.');return;}
+
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+
   try{
-    const res=await fetch('https://formspree.io/f/xqeyjllq',{
+    const res = await fetch('https://formspree.io/f/xqeyjllq',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name,email,instagram:handle,niche,message:msg})
+      body: JSON.stringify({name, email, business, message: msg})
     });
     if(res.ok){
-      document.getElementById('contact-form').style.display='none';
-      document.getElementById('success-msg').style.display='block';
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('success-msg').style.display  = 'block';
     } else {
-      btn.textContent='Send My Info →';btn.disabled=false;
+      btn.textContent = 'Send →'; btn.disabled = false;
       alert('Something went wrong. Please try again.');
     }
   } catch(e){
-    btn.textContent='Send My Info →';btn.disabled=false;
+    btn.textContent = 'Send →'; btn.disabled = false;
     alert('Something went wrong. Please try again.');
   }
 }
 </script>
+
 </body>
 </html>
